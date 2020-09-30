@@ -7,9 +7,38 @@ This project uses the [Keras] library and the extended MNIST [EMNIST] dataset of
 
 # An MLP for EMNIST Letters
 
-Since the EMNIST Letters data has 26 classes and mixes upper- and lowercase letters within each class, a network architecture consisting of three layers - input, hidden, and output, with a batch size of 128, number of classes as 26, and number of epochs as 20 is evaluated. 
+Since the EMNIST Letters data has 26 classes and mixes upper- and lowercase letters within each class, a network architecture consisting of three layers - input, hidden, and output, with a batch size of 128, number of classes as 26, and number of epochs as 20 is evaluated.
 
 This architecture is evaluated using different activation functions like **ReLU**, **Softmax**, **tanh**, and **Sigmoid**, with *early stopping* and *L2 regularization* with 2048 neurons, and other additonal parameters described in the Jupyter notebook.
+
+# Dual-booting Ubuntu and Windows
+
+Using a GPU significantly reduces compute time per epoch. This is going to be crucial in the next project. The below setup ensures groundwork for the next project. **Ubuntu is going to be installed on a separate partition**
+
++ Turn off hibernate:
+
+  Admin cmd > `powercfg -hibernate off`
+
++ Disabe fast startup:
+  + Control Panel > Power Options > (Uncheck) Turn on fast startup
+  + Ensured no row under "On battery" and "Pluged in" is set to Hibernate
+
++ Shrink Volume of C: using the *Disk Management* utility in Windows
+
++ Shutdown PC and enter machine's BIOS utility (Enter / F12 at boot logo)
+  + Disable Secure Boot
+  + Save changes and restart
+
++ Prepare USB:
+  + Download Rufus and select the .iso
+  + Use GPT partitioning for UEFI (and MBR for BIOS)
+
++ Installation type:
+  + Partition: Primary
+  + Location : Beginning of this space
+  + Use as   : Ext 4 journaling file system
+  + Mount point: /
+  + Device for boot loader information: System SSD
 
 
 [Keras]: https://keras.io
